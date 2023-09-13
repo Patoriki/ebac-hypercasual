@@ -12,15 +12,12 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public string tagToCheckEnemy = "Enemy";
+    public string tagToCheckEnd = "EndLine";
+
+    public GameObject endScreen;
 
     private bool _canRun;
     private Vector3 _pos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _canRun = true;
-    }
 
     // Update is called once per frame
     void Update()
@@ -39,7 +36,26 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            _canRun = false;
+            GameOver();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == tagToCheckEnd)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        _canRun = false;
+        endScreen.SetActive(true);
+    }
+
+    public void StartToRun()
+    {
+        _canRun = true;
     }
 }
