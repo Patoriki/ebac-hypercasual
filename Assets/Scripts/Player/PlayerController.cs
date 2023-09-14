@@ -15,6 +15,9 @@ public class PlayerController : Singleton<PlayerController>
     public TextMeshProUGUI textInvencible;
     public TextMeshProUGUI textSpeedUp;
 
+    [Header("Power Up")]
+    public GameObject coinCollector;
+
     [Space]
     public float speed = 1;
 
@@ -117,6 +120,11 @@ public class PlayerController : Singleton<PlayerController>
         p.y = _startPosition.y;
         transform.position = p;*/
         transform.DOMoveY(_startPosition.y, animationDuration);
+    }
+
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
     }
     #endregion
 }
