@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EVO.Core.Singleton;
+using TMPro;
 
 public class PlayerController : Singleton<PlayerController>
 {
     [Header("Lerp")]
     public Transform target;
     public float lerpSpeed;
+
+    [Header("Text")]
+    public TextMeshProUGUI textInvencible;
+    public TextMeshProUGUI textSpeedUp;
 
     [Space]
     public float speed = 1;
@@ -21,8 +26,11 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _pos;
     private float _currentSpeed;
 
+    private bool invencible;
+
     private void Start()
     {
+        invencible = false;
         ResetSpeed();
     }
 
@@ -32,7 +40,7 @@ public class PlayerController : Singleton<PlayerController>
         if (!_canRun) return;
 
         _pos = target.position;
-        _pos.y = transform.position.y;
+        _pos.y = transform.position.y;  
         _pos.z = transform.position.z;
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
@@ -43,7 +51,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            GameOver();
+            if (!invencible) GameOver();
         }
     }
 
@@ -51,7 +59,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.tag == tagToCheckEnd)
         {
-            GameOver();
+            if (!invencible) GameOver();
         }
     }
 
@@ -75,6 +83,21 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+    }
+
+    public void SetSpeedUpText(string s)
+    {
+        textSpeedUp.text = s;
+    }
+
+    public void SetInvencible(bool b = true)
+    {
+        invencible = b;
+    }
+
+    public void SetInvencibleText(string s)
+    {
+        textInvencible.text = s;
     }
     #endregion
 }
