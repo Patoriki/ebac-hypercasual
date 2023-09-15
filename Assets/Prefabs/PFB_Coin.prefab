@@ -63,9 +63,10 @@ MonoBehaviour:
   timeToHide: 0
   graphicItem: {fileID: 4159051539738371060}
   audioSource: {fileID: 0}
-  collider: {fileID: 4159051538537490615}
+  objCollider: {fileID: 4159051538537490615}
   collect: 0
   lerp: 9
+  minDistance: 1
 --- !u!1 &4159051539738371060
 GameObject:
   m_ObjectHideFlags: 0

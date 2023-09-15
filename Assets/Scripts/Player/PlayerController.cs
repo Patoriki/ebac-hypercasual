@@ -18,6 +18,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Power Up")]
     public GameObject coinCollector;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+
     [Space]
     public float speed = 1;
 
@@ -56,7 +59,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            if (!invencible) GameOver();
+            if (!invencible)
+            {
+                MoveBack(collision.transform);
+                GameOver(AnimatorManager.AnimationType.DEAD);
+            }
         }
     }
 
@@ -68,15 +75,22 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private void GameOver()
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(1f, 0.3f).SetRelative();
+    }
+
+    private void GameOver(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.IDLE)
     {
         _canRun = false;
         endScreen.SetActive(true);
+        animatorManager.Play(animationType);
     }
 
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimationType.RUN);
     }
 
     #region POWERUPS

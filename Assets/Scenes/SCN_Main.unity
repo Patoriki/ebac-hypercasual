@@ -606,7 +606,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337228246}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &374085550
 BoxCollider:
@@ -1796,6 +1796,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 284882911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &838736819 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4731668155162345422, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 284882911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50556f514c2ebdc468a3e396f6de1e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &847289074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4159051538537490618, guid: b613085cef8ba94478c2e1bc882b25a5, type: 3}
@@ -2958,8 +2969,8 @@ Transform:
   m_LocalPosition: {x: -3.2753913, y: 0.2, z: 3.4294848}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 374085549}
   - {fileID: 838736818}
+  - {fileID: 374085549}
   m_Father: {fileID: 44509757}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2996,6 +3007,7 @@ MonoBehaviour:
   textInvencible: {fileID: 1586254283}
   textSpeedUp: {fileID: 1118994058}
   coinCollector: {fileID: 374085548}
+  animatorManager: {fileID: 838736819}
   speed: 8
   tagToCheckEnemy: Enemy
   tagToCheckEnd: EndLine
