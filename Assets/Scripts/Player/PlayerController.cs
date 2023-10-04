@@ -74,7 +74,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.tag == tagToCheckEnd)
         {
-            if (!invencible) GameOver();
+            GameOver();
         }
     }
 
