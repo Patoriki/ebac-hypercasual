@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2664749468096870672}
   - component: {fileID: 8302793079434676827}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PFB_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2298847331906878809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -1.77, z: 21.17}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 4.5425997, y: 1, z: 1}
   m_Children:
   - {fileID: 5168330928658241382}
   m_Father: {fileID: 0}

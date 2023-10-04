@@ -38,6 +38,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        Physics.IgnoreLayerCollision(3, 6, true);
+
         _startPosition = transform.position;
         invencible = false;
         ResetSpeed();
