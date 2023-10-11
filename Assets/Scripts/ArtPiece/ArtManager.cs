@@ -8,7 +8,8 @@ public class ArtManager : Singleton<ArtManager>
     public enum ArtType
     {
         TYPE_01,
-        TYPE_02
+        TYPE_02,
+        TYPE_03
     }
 
     public List<ArtSetup> artSetup;
