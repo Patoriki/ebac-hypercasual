@@ -19,6 +19,7 @@ public class ItemCollectableCoin : ItemCollectableBase
         base.OnCollect();
         objCollider.enabled = false;
         collect = true;
+        PlayerController.instance.Bounce();
     }
 
     protected override void Collect()

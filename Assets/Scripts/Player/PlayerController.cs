@@ -36,6 +36,8 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _startPosition;
     private float _baseSpeedToAnimation = 8;
 
+    [SerializeField] private BounceHelper _bounceHelper;
+
     private void Start()
     {
         Physics.IgnoreLayerCollision(3, 6, true);
@@ -43,6 +45,12 @@ public class PlayerController : Singleton<PlayerController>
         _startPosition = transform.position;
         invencible = false;
         ResetSpeed();
+    }
+
+    public void Bounce()
+    {
+        if (_bounceHelper != null)
+        _bounceHelper.Bounce();
     }
 
     // Update is called once per frame
