@@ -21,6 +21,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [Header("VFX")]
+    public ParticleSystem vfxDead;
+
     [Space]
     public float speed = 1;
 
@@ -96,6 +99,7 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animationType);
+        if (vfxDead != null) vfxDead.Play();
     }
 
     public void StartToRun()

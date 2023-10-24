@@ -44,6 +44,7 @@ public class ItemCollectableBase : MonoBehaviour
     {
         if (itemParticleSystem != null)
         {
+            itemParticleSystem.transform.SetParent(null);
             itemParticleSystem.Play();
         }
 
