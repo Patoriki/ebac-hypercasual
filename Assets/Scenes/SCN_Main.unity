@@ -942,7 +942,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354983177}
-  m_LocalRotation: {x: 0.25666797, y: -0.000000016629963, z: 0.0000000044163264, w: 0.9664997}
+  m_LocalRotation: {x: 0.25666797, y: 0.00000001662996, z: -0.0000000044163255, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 2.2422707, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2099,7 +2099,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.25666797, y: -0.000000016629963, z: 0.0000000044163264, w: 0.9664997}
+  m_LocalRotation: {x: 0.25666797, y: 0.00000001662996, z: -0.0000000044163255, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 2.2422707, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2431,7 +2431,7 @@ GameObject:
   - component: {fileID: 1337228248}
   - component: {fileID: 1337228242}
   - component: {fileID: 1337228244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerContainer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2534,6 +2534,7 @@ MonoBehaviour:
   coinCollector: {fileID: 374085548}
   animatorManager: {fileID: 838736819}
   vfxDead: {fileID: 842003716}
+  limitVector: {x: -3.1, y: 3.1}
   speed: 8
   tagToCheckEnemy: Enemy
   tagToCheckEnd: EndLine
